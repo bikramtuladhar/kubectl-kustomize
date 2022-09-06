@@ -68,6 +68,8 @@ jobs:
             echo ::set-output name=exists::true
           elif [[ $result == *"no such manifest"* ]]; then
             echo ::set-output name=exists::false
+          elif [[ $result == *"error"* ]]; then
+            echo ::set-output name=exists::false
           else
             echo $result
             exit 1;

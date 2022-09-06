@@ -21,6 +21,7 @@ FROM alpine:3.16.0 AS runtime
 
 LABEL maintainer="LINE Open Source <dl_oss_dev@linecorp.com>"
 
+RUN apk add --no-cache bash
 COPY --from=downloader /downloads/kubectl /usr/local/bin/kubectl
 COPY --from=downloader /downloads/kustomize /usr/local/bin/kustomize
 

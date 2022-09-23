@@ -110,7 +110,7 @@ jobs:
           push: false
 
       - name: Push image
-        if: ${{ needs.fetch-metadata.outputs.image-exists == 'false' && github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         uses: docker/build-push-action@v2
         with:
           context: .
